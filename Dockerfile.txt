@@ -1,3 +1,4 @@
+# Here we change to root due to seuser in the base image
 USER root
 ENV YUMCONFIG=/etc/yum.repos.d/google-chrome.repo
 COPY google-chrome.repo $YUMCONFIG
