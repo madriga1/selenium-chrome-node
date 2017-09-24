@@ -29,7 +29,7 @@ RUN CD_VERSION=$(if [ ${CHROME_DRIVER_VERSION:-latest} = "latest" ]; then echo $
   && sudo ln -fs /opt/selenium/chromedriver-$CD_VERSION /usr/bin/chromedriver
 
 COPY generate_config $SELPATH
-COPY sudo chrome_launcher.sh /opt/google/chrome/google-chrome
+COPY chrome_launcher.sh /opt/google/chrome/google-chrome
 #=================================
 # Chrome Launch Script Modification
 #=================================
