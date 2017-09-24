@@ -1,3 +1,4 @@
+USER root
 ENV YUMCONFIG=/etc/yum.repos.d/google-chrome.repo
 COPY google-chrome.repo $YUMCONFIG
 #--------------------------------------------------------
