@@ -36,11 +36,13 @@ RUN CD_VERSION=$(if [ ${CHROME_DRIVER_VERSION:-latest} = "latest" ]; then echo $
   && sudo ln -fs /opt/selenium/chromedriver-$CD_VERSION /usr/bin/chromedriver
 
 COPY generate_config $SELDIR/generate_config
-RUN chmod 755 $SELDIR/generate_config
+RUN ls -ltr $SELDIR/generate_config
+#RUN chmod 755 $SELDIR/generate_config
 #=================================
 # Chrome Launch Script Modification
 #=================================
-COPY chrome_launcher.sh /opt/google/chrome/google-chrome
-RUN chmod 755 /opt/google/chrome/google-chrome/chrome_launcher.sh
+RUN ls -ltr /opt/google/chrome/google-chrome
+#COPY chrome_launcher.sh /opt/google/chrome/google-chrome
+#RUN chmod 755 /opt/google/chrome/google-chrome/chrome_launcher.sh
 # Generating a default config during build time
-RUN $SELDIR/generate_config > $SELDIR/config.json
+#RUN $SELDIR/generate_config > $SELDIR/config.json
