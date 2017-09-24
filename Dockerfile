@@ -37,7 +37,8 @@ RUN CD_VERSION=$(if [ ${CHROME_DRIVER_VERSION:-latest} = "latest" ]; then echo $
 
 # Copy files
 COPY generate_config $SELPATH
-RUN chmod 755 $SELPATH/generate_config
+RUN ls -ltr $SELPATH
+#RUN chmod 755 $SELPATH/generate_config
 # Chrome Launch Script Modification
 COPY chrome_launcher.sh /opt/google/chrome/google-chrome
 # Generating a default config during build time
