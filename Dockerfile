@@ -35,7 +35,9 @@ RUN CD_VERSION=$(if [ ${CHROME_DRIVER_VERSION:-latest} = "latest" ]; then echo $
   && chmod 755 $SELDIR/chromedriver-$CD_VERSION \
   && sudo ln -fs /opt/selenium/chromedriver-$CD_VERSION /usr/bin/chromedriver
 
-COPY generate_config $SELDIR/generate_config
+RUN ls -ltr $SELDIR/generate_config
+COPY generate_config $SELPATH
+COPY chrome_launcher.sh /opt/google/chrome/google-chrome
 RUN ls -ltr $SELDIR/generate_config
 #RUN chmod 755 $SELDIR/generate_config
 #=================================
