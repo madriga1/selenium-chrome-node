@@ -31,7 +31,7 @@ RUN CD_VERSION=$(if [ ${CHROME_DRIVER_VERSION:-latest} = "latest" ]; then echo $
 RUN ls -ltr $SELDIR/generate_config
 COPY generate_config $SELPATH
 COPY chrome_launcher.sh /opt/google/chrome/google-chrome
-RUN ls -ltr $SELDIR/generate_config
+RUN ls -ltr $SELDIR
 #RUN chmod 755 $SELDIR/generate_config
 #=================================
 # Chrome Launch Script Modification
